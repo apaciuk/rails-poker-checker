@@ -1,6 +1,5 @@
 # rails-poker-checker
 
-
 #### Requirements
 
 You'll need the following installed to run the template successfully:
@@ -13,6 +12,14 @@ You'll need the following installed to run the template successfully:
 - ImageMagick or libvips for ActiveStorage variants
 - Yarn - `brew install yarn` or [Install Yarn](https://yarnpkg.com/en/docs/install)
 - Foreman global (optional) - `gem install foreman` - helps run all your processes in development
+
+#### Running app
+
+```bash
+bin/dev
+```
+
+Enter card string in uppercase letters/numbers representing face and suit, create hand.
 
 ### Factory Bot for RSpec
 
@@ -41,7 +48,7 @@ end
 
 - create table expression: insert after the table name: ", id: :uuid" # minus quotes, sets Primary key uuid
 - foreign_key expression: append: ", type: :uuid" # minus quotes, sets Foreign key uuid
-- In ApplicationRecord insert - self.implicit_order_column = 'created_at'  under primary_abstract_class line
+- In ApplicationRecord insert - self.implicit_order_column = 'created_at' under primary_abstract_class line
 
 $ rails db:migrate:reset
 
@@ -75,12 +82,6 @@ rails new myapp -d postgresql -m template.rb
 
 ❓Having trouble? Try adding `DISABLE_SPRING=1` before `rails new`. Spring will get confused if you create an app with the same name twice.
 
-#### Running your app
-
-```bash
-bin/dev
-```
-
 You can also run them in separate terminals manually if you prefer.
 
 A separate `Procfile` is generated for deploying to production on Heroku.
@@ -92,8 +93,8 @@ After migration field/column added,
 Can be adjusted in application_controler, example below add a github_link
 
 def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar, :github_link])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
+devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar, :github_link])
+devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
 end
 
 and add to the create method in onmniauth_controller
@@ -173,7 +174,7 @@ brew services start redis
 
 ##### Ubuntu
 
-```
+````
 sudo apt-get install redis-server
 
 
@@ -184,4 +185,4 @@ rails db:drop
 spring stop
 cd ..
 rm -rf myapp
-```
+````
