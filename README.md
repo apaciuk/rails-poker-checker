@@ -1,4 +1,4 @@
-# jumpstart-custom
+# rails-poker-checker
 
 ## Getting Started
 
