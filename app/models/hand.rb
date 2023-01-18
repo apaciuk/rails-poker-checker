@@ -14,13 +14,4 @@ class Hand < ApplicationRecord
     def initialize(name)
         @name = name
     end 
-
-    def royal_flush
-        if @name == '10HJHQHKHAH' || @cards == '10DJDQDKDAH' || @cards == '10SJSQSKSAH' || @cards == '10CJCQCKCAH'
-            return true
-        else
-            return false
-        end
-    end 
-
 end
