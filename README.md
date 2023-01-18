@@ -19,7 +19,7 @@ You'll need the following installed to run the template successfully:
 bin/dev
 ```
 
-Enter card string in uppercase letters/numbers representing face and suit, create hand.
+Enter card string in uppercase letters/numbers representing face and suit, create hand. Hands matching regular Poker hands will acquire name.
 
 ### Factory Bot for RSpec
 
