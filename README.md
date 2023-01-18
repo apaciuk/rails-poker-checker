@@ -16,7 +16,7 @@ You'll need the following installed to run the template successfully:
 #### Running app
 
 ```bash
-bin/dev
+rails s
 ```
 
 Enter card string in uppercase letters/numbers representing face and suit, create hand. Hands matching regular Poker hands will acquire name.
