@@ -1,0 +1,34 @@
+<%= form_with(model: check) do |form| %>
+  <% if check.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(check.errors.count, "error") %> prohibited this check from being saved:</h2>
+
+      <ul>
+      <% check.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :hand, class: 'form-label' %>
+      <%= form.text_field :status, class: 'form-control', placeholder: 'Enter 5 cards in consecutive format 3S4C (3 of spades 4 of clubs) or AS for Court Cards' %>
+    </div>
+
+  <div class="mb-3">
+    <% if check.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', check, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if check.persisted? %>
+      <%= link_to "Cancel", check, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", checks_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
